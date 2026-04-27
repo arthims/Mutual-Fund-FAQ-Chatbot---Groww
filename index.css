@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Groww — Bank-grade financial clarity. All colors HSL. */
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Zinc-based palette */
+    --background: 0 0% 98%;          /* zinc-50 #FAFAFA */
+    --foreground: 240 10% 4%;        /* zinc-950 #09090B */
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+
+    --primary: 240 10% 4%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 5% 96%;         /* zinc-100 */
+    --secondary-foreground: 240 10% 4%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;  /* zinc-500 */
+
+    --accent: 240 5% 96%;
+    --accent-foreground: 240 10% 4%;
+
+    --destructive: 0 72% 51%;        /* red-600 */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 90%;            /* zinc-200 */
+    --input: 240 6% 90%;
+    --ring: 240 10% 4%;
+
+    --radius: 0.875rem;
+
+    /* Domain semantic tokens */
+    --gain: 160 84% 30%;             /* emerald-600 #059669 */
+    --gain-foreground: 0 0% 100%;
+    --gain-soft: 152 81% 96%;        /* emerald-50 */
+    --loss: 0 72% 51%;               /* red-600 */
+    --loss-soft: 0 86% 97%;          /* red-50 */
+    --bolt: 200 98% 39%;             /* sky-600 #0284C7 */
+    --bolt-foreground: 0 0% 100%;
+    --bolt-soft: 204 94% 94%;        /* sky-100 */
+    --surface-elevated: 0 0% 100%;
+    --hairline: 240 6% 90%;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  .font-mono {
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+    font-feature-settings: 'tnum', 'zero';
+  }
+}
+
+@layer utilities {
+  .text-gain { color: hsl(var(--gain)); }
+  .text-loss { color: hsl(var(--loss)); }
+  .bg-gain { background-color: hsl(var(--gain)); }
+  .bg-gain-soft { background-color: hsl(var(--gain-soft)); }
+  .bg-loss-soft { background-color: hsl(var(--loss-soft)); }
+  .bg-bolt { background-color: hsl(var(--bolt)); }
+  .bg-bolt-soft { background-color: hsl(var(--bolt-soft)); }
+  .text-bolt { color: hsl(var(--bolt)); }
+  .tnum { font-variant-numeric: tabular-nums; }
+
+  /* Hide scrollbars on tab strip */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
